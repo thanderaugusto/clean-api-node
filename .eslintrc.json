@@ -1,10 +1,46 @@
 {
+    "env": {
+        "es2020": true,
+        "node": true,
+        "jest": true
+    },
     "extends": [
-        "airbnb-typescript/base"
+        "airbnb-base"
     ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "project": [
-            "./tsconfig.json"
-        ]
+        "ecmaVersion": 11,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "rules": {
+        "camelcase": "off",
+        "no-unused-vars": "off",
+        "import/prefer-default-export": "off",
+        "max-classes-per-file": "off",
+        "prefer-object-spread": "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "class-methods-use-this": "off"
     }
 }
