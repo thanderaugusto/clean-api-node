@@ -1,6 +1,5 @@
 {
-    "src/**/*.{js,ts,tsx, jsx}": [
-        "npx eslint eslint --cache --fix",
+    "src/**/.{js,ts,tsx, jsx}": [
         "npx eslint --ext js,ts,jsx,tsx --fix",
         "npm run test:staged",
         "git add"
